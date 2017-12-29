@@ -82,9 +82,9 @@ void KalmanFilter::UpdateEKF(const VectorXd &z) {
     y(1) += 2*M_PI;
   };
 
-  cout << "z = " << z << endl;
-  cout << "z_pred = " << z_pred << endl;
-  cout << "y = " << y << endl;
+//  cout << "z = " << z << endl;
+//  cout << "z_pred = " << z_pred << endl;
+//  cout << "y = " << y << endl;
 
 
 

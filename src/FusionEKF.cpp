@@ -51,7 +51,7 @@ FusionEKF::~FusionEKF() {}
 
 void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
 
-  cout << "=========== process measurement ============" << endl;
+//  cout << "=========== process measurement ============" << endl;
   /*****************************************************************************
    *  Initialization
    ****************************************************************************/
@@ -63,7 +63,7 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
       * Remember: you'll need to convert radar from polar to cartesian coordinates.
     */
     // first measurement
-    cout << "EKF first measurement: " << endl;
+    // cout << "EKF first measurement: " << endl;
     previous_timestamp_ = measurement_pack.timestamp_;
     ekf_.x_ = VectorXd(4);
     ekf_.x_ << 1, 1, 1, 1;
@@ -178,7 +178,7 @@ void FusionEKF::ProcessMeasurement(const MeasurementPackage &measurement_pack) {
     ekf_.UpdateEKF(measurement_pack.raw_measurements_);
   } else {
     // Laser updates
-    cout << "Update Lazer :" << endl;
+//    cout << "Update Lazer :" << endl;
     ekf_.R_ = R_laser_;
     ekf_.H_ = H_laser_;
     ekf_.Update(measurement_pack.raw_measurements_);
